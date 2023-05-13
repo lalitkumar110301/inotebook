@@ -1,9 +1,8 @@
 import './App.css';
 import {
   BrowserRouter as Router,
-  Switch,
+  Routes,
   Route,
-  Link
 } from "react-router-dom";
 import Navbar from './components/Navbar';
 import Home from './components/Home';
@@ -14,14 +13,10 @@ function App() {
     <>
       <Router>
         <Navbar />
-        <Switch>
-          <Route exact path='/'>
-            <Home />
-          </Route>
-          <Route exact path='/about'>
-            <About />
-          </Route>
-        </Switch>
+        <Routes>
+          <Route exact path='/' element={<Home/>} />
+          <Route exact path='/about' element={<About/>} />
+        </Routes>
       </Router>
     </>
   );
