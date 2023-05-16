@@ -2,6 +2,10 @@ const connectToMongo = require('./db')
 const express = require('express')
 const app = express()
 const port = 5000
+var cors = require('cors')
+
+// cors is used to allow browser to make api calls from localhost
+app.use(cors())
 
 // connection to mongodb
 connectToMongo().then(()=>{

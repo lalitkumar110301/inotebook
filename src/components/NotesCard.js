@@ -1,6 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import NoteContext from '../context/notes/noteContext';
 
 const NotesCard = (props) => {
+    const context = useContext(NoteContext);
+    const { deleteNote } = context;
+    const id = props.noteID;
+
+    const handleDelete = async() =>{
+        deleteNote(id).then((res)=>{
+            console.log(res);
+        }).catch(err => console.log(err))
+    }
+
     return (
         <div className="card my-4" style={{"width": "18rem"}}>
             <div className="card-body">
@@ -8,7 +19,7 @@ const NotesCard = (props) => {
                 <h5 className="card-title">{props.title}</h5>
                 <p className="card-text">{props.content}</p>
                 <a href="#" className="card-link">Update</a>
-                <a href="#" className="card-link">Delete</a>
+                <a href="#" className="card-link" onClick={handleDelete}>Delete</a>
             </div>
         </div>
     )

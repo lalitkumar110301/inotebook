@@ -1,22 +1,22 @@
 import React from 'react'
-import Form from './Form'
+import AddNoteForm from './AddNoteForm'
 import Note from './Note'
 
 const Home = () => {
 
   return (
     <div className="my-5">
-      <div class="row">
+      <div className="row">
         
         {/* colulmn to display all notes */}
-        <div className="col" style={{'height':'90vh','overflow-y': 'auto'}}>
+        <div className="col" style={{'height':'90vh','overflowY': 'auto'}}>
           <Note/>
         </div>
 
         {/* col to add note */}
         <div className="col">
           <h4 className='text-center' style={{"color": "red"}}>Add Note</h4>
-          <Form/>
+          <AddNoteForm/>
         </div>
       </div>
     </div>
